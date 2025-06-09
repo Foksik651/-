@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>ООО ВелесТор</title>
+    <link rel="stylesheet" href="/style/reg.css">
+    
+</head>
+<body id="reg.html">
+    <div class="snow"></div>
+    <div class="container right-panel-active" id="container">
+        <!-- Sign Up -->
+        <div class="container__form container--signup">
+            <form action="#" class="form" id="form1">
+                <h2 class="form__title">Регистрация</h2>
+                <input type="text" placeholder="Имя пользователя" class="input" required />
+                <input type="email" placeholder="Email" class="input" required />
+                <input type="password" placeholder="Пароль" class="input" required />
+                <button class="btn" type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    
+        <!-- Sign In -->
+        <div class="container__form container--signin">
+            <form action="#" class="form" id="form2">
+                <h2 class="form__title">Вход</h2>
+                <input type="email" placeholder="Email" class="input" required />
+                <input type="password" placeholder="Пароль" class="input" required />
+                <a href="#" class="link">Забыли пароль?</a>
+                <button class="btn" type="submit">Войти</button>
+            </form>
+        </div>
+    
+        <!-- Overlay -->
+        <div class="container__overlay">
+            <div class="overlay">
+                <div class="overlay__panel overlay--left">
+                    <h2>С возвращением!</h2>
+                    <p>Войдите, чтобы получить доступ к вашему аккаунту</p>
+                    <button class="btn" id="signIn">Войти</button>
+                </div>
+                <div class="overlay__panel overlay--right">
+                    <h2>Впервые здесь?</h2>
+                    <p>Зарегистрируйтесь, чтобы начать работу с нами</p>
+                    <button class="btn" id="signUp">Регистрация</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const signInBtn = document.getElementById("signIn");
+            const signUpBtn = document.getElementById("signUp");
+            const container = document.getElementById("container");
+
+            signInBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                container.classList.remove("right-panel-active");
+            });
+
+            signUpBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                container.classList.add("right-panel-active");
+            });
+
+            document.getElementById("form1").addEventListener("submit", function(e) {
+                e.preventDefault();
+                alert("Форма регистрации отправлена!");
+                // Здесь можно добавить AJAX-запрос на сервер
+            });
+
+            document.getElementById("form2").addEventListener("submit", function(e) {
+                e.preventDefault();
+                alert("Форма входа отправлена!");
+                // Здесь можно добавить AJAX-запрос на сервер
+            });
+        });
+    </script>
+</body>
+</html>
